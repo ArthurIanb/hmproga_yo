@@ -9,25 +9,21 @@ double shotthatbih(double val, int stepen){
 }
 
 int main(){
-    const int HEIGHT = 42;
-    const int WIDTH = 82;
-    double x = -1.5;
-    double y = 1.5;
+    const int HEIGHT = 21;
+    const int WIDTH = 41;
+
     for(int i = 0; i < HEIGHT; ++i){
         for(int j = 0; j < WIDTH; ++j){
-            if(-0.1 < x && x < 0.1 && -0.1 < y && y < 0.1){
-                int r = 1;
-            }
-            x += (double)3 / WIDTH;
-            double eq = (x * x + y * y - 1) * (x * x + y * y - 1) * (x * x + y * y - 1) - x * x * y * y * y;
+            double x = double(3) / WIDTH * j - 1.5;
+            double y = -double(3) / HEIGHT * i + 1.5;
+
+            double eq = (x * x + y * y - 1)*(x * x + y * y - 1)*(x * x + y * y - 1) - x * x * y * y * y;
             if(eq <= 0){
                 std::cout << '*';
             }else
                 std::cout << '.';
 
         }
-        y -= (double)3 / HEIGHT;
-        x = -1.5;
         std::cout << '\n';
 
     }
